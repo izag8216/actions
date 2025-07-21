@@ -1,0 +1,16 @@
+{
+  "name": "github-actions-demo",
+  "version": "1.0.0",
+  "description": "GitHub Actions demo project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js",
+    "lint": "echo 'Linting code...' && exit 0",
+    "build": "echo 'Building project...' && mkdir -p dist && echo 'console.log(\"Built successfully\");' > dist/app.js"
+  },
+  "keywords": ["github-actions", "ci-cd"],
+  "author": "izag8216",
+  "license": "MIT",
+  "devDependencies": {}
+}
