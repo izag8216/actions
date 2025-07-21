@@ -1,0 +1,32 @@
+name: Hello World Workflow
+
+# ワークフローのトリガー設定
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch: # 手動実行を許可
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Say Hello
+      run: |
+        echo "Hello, GitHub Actions!"
+        echo "Repository: ${{ github.repository }}"
+        echo "Actor: ${{ github.actor }}"
+        echo "Event: ${{ github.event_name }}"
+        date
+    
+    - name: Show environment info
+      run: |
+        echo "Operating System: $(uname -a)"
+        echo "Current directory: $(pwd)"
+        echo "Files in directory:"
+        ls -la
