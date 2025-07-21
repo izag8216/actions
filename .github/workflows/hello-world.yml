@@ -1,12 +1,11 @@
 name: Hello World Workflow
 
-# ワークフローのトリガー設定
 on:
   push:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
-  workflow_dispatch: # 手動実行を許可
+  workflow_dispatch:
 
 jobs:
   hello-world:
